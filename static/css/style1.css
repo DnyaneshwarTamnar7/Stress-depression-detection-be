@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&amp;display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 60.5%;
+}
+
+body{
+  background-color: #6ebbff;
+  font-family: "Poppins", sans-serif;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.grid{
+  display: grid;
+  margin: 50px auto 0;
+  height: 90%;
+  width: 114em;
+  grid-gap: 6rem;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
+
+.grid-item{
+  background-color: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid-item:hover{
+  transform: translate(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+
+.card-img{
+  display: block;
+  width: 90%;
+  height: 20rem;
+  margin: 1%;
+  object-fit: fill;
+}
+
+.card-content{
+  padding: 3rem;
+}
+
+.card-header{
+  font-size: 3rem;
+  background-color: #fff;
+  font-weight: 100;
+  color: #4b6ed7;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.card-text{
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7;
+  color: #7c7c7c;
+  margin-bottom: 2.5rem;
+}
+
+.card-btn{
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #3363ff;
+  background-color: #d8e0fd;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+.card-btn span{
+  margin-left: 1rem;
+  transition: 0.2s;
+}
+.card-btn:hover,
+.card-btn:active{
+  color: #fff;
+  background-color: #4f70e7;
+}
+
+.card-btn:hover,
+.card-btn:active{
+  margin-left: 0.1rem;
+}
+
+@media screen and (max-width: 60em) {
+  body{
+    padding: 3rem;
+  }
+  .grid{
+    grid-gap: 3rem;
+  }
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: #92afff;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 100px;
+}
+
+.parallax > use {
+  -webkit-animation: moveForever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+          animation: moveForever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+}
+
+@-webkit-keyframes moveForever {
+  0% {
+      -webkit-transform: translate3d(-90px, 0, 0);
+              transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+      -webkit-transform: translate3d(85px, 0, 0);
+              transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes moveForever {
+  0% {
+      -webkit-transform: translate3d(-90px, 0, 0);
+              transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+      -webkit-transform: translate3d(85px, 0, 0);
+              transform: translate3d(85px, 0, 0);
+  }
+}
+
+@media (max-width : 768px) {
+  h1 {
+      font-size: 24px;
+  }
+  .content {
+      height: 30vh;
+  }
+  .waves {
+      height: 40px;
+      min-height: 40px;
+  }
+}
+
+.nav-link:hover{
+  background-color: #82bcff;
+  margin: auto;
+  text-decoration: #fff;
+  border-radius: 5px;
+}
+
+
+

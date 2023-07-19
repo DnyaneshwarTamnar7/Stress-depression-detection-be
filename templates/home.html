@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- fontawesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;family=Cinzel:wght@500&amp;family=Roboto:wght@300&amp;family=Poppins:wght@500;600;800&amp;display=swap" rel="stylesheet">
+
+    <!--<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">-->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+    <title>Home of DASS</title>
+</head>
+<body>
+        <!-- ==============header menu section starts here============== -->
+        <section class="sidebar">
+          <div class="nav-header">
+            <p class="logo">Welcome</p>
+            <i class="bx bx-menu-alt-right btn-menu"></i>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <a href="/profile">
+                <i class='bx bx-user'></i></i>
+                <span class="title">Profile</span>
+              </a>
+              <span class="tooltip">Profile</span>
+            </li>
+            <li>
+              <a href="/home">
+                <i class="bx bx-home-alt-2"></i>
+                <span class="title">Home</span>
+              </a>
+              <span class="tooltip">Home</span>
+            </li>
+            <li>
+              <a href="/results">
+                <i class='bx bx-history'></i>          
+                <span class="title">Past Results</span>
+              </a>
+              <span class="tooltip">Results</span>
+            </li>
+            <!-- <li>
+              <a href="#">
+                <i class='bx bx-info-circle'></i>
+                <span class="title">About Us</span>
+              </a>
+              <span class="tooltip">Abouts</span>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bx bx-phone-call"></i>
+                <span class="title">Contact Us</span>
+              </a>
+              <span class="tooltip">Contact Us</span>
+            </li> -->
+        
+            <li>
+              <a href="/logout">
+                <i class='bx bx-log-out'></i>
+                <span class="title">Log out</span>
+              </a>
+              <span class="tooltip">Log out</span>
+            </li>
+            
+          </ul>
+        </section>
+  <!-- ==============header menu section ends here============== -->
+<div class="test-container">
+  <div class="card" style="width: 22rem;">
+    <div class="card-body">
+      <a href="/que1" class="btn btn-primary">Stress Test</a>
+      <p class="card-text">Current Test Result: {{stress}}</p>
+    </div>
+  </div>
+  <div class="card" style="width: 22rem;">
+    <div class="card-body">
+      <a href="/que2" class="btn btn-primary">Anxiety Test</a>
+      <p class="card-text">Current Test Result: {{anxiety}}</p>
+
+    </div>
+  </div>
+  <div class="card" style="width: 22rem;">
+    <div class="card-body">
+      <a href="/que3" class="btn btn-primary">Depression Test</a>
+      <p class="card-text">Current Test Result: {{depression}}</p>
+
+    </div>
+  </div>
+</div>
+<form action="/open-que" method="post">
+<div class="form-floating">
+  <label for="floatingTextarea" id="floatingTextarea">What is going in your mind?What you thunking now?</label>
+  <textarea class="form-control" name="textarea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <div class="sh-result">
+    <input type="submit" class="result" value="Show Result">
+  </div>
+  <div>
+    <p id="result">{{result}}</p>
+  </div>
+</div>
+
+</form>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+    <script>
+      const btn_menu = document.querySelector(".btn-menu");
+      const side_bar = document.querySelector(".sidebar");
+
+      btn_menu.addEventListener("click", function () {
+        side_bar.classList.toggle("expand");
+        changebtn();
+      });
+
+      function changebtn() {
+        if (side_bar.classList.contains("expand")) {
+          btn_menu.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+          btn_menu.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+      }
+    </script>
+</body>
+</html>
